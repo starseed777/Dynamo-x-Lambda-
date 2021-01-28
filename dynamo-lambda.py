@@ -9,8 +9,8 @@ def lambda_handler(event, context):
     filename = event["Records"][0]["s3"]["object"]["key"]
 
     json_object = boto3.client("s3").get_object(
-        bucket = bucket, 
-        key = filename 
+        Bucket = bucket, 
+        Key = filename 
     )
 
     dynamodb = boto3.resource('dynamodb')
